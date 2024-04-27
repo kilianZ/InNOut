@@ -1,0 +1,19 @@
+<html>
+   <body>
+      {% with messages = get_flashed_messages() %}
+         {% if messages %}
+      <p>{{ messages[0] }}</p>
+         {% endif %}
+      {% endwith %} 
+      {% block body %}{% endblock %}
+      <form action = "http://localhost:5000/signup" method = "post">
+         <p>Enter Username and Password:</p>
+         <p><input type = "text" name = "username" /></p>
+         <p><input type = "text" name = "password" /></p>
+         <p><input type = "submit" value = "Create Account" /></p>
+      </form>
+   </body>
+</html>
+
+
+

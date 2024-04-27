@@ -3,6 +3,11 @@
       {% with messages = get_flashed_messages() %}
          {% if messages %}
       <p>{{ messages[0] }}</p>
+            {% if messages[0] == 'User does not exist' %}
+      <form action="http://localhost:5000/signup" method="get">
+         <p><input type="submit" value='Sign Me Up!'/></p>
+      </form>
+            {% endif %}
          {% endif %}
       {% endwith %} 
       {% block body %}{% endblock %}
